@@ -1,0 +1,36 @@
+name: Update Typedoc Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+    source_repo:
+      description: "Source repo"
+      required: true
+      type: string
+
+jobs:
+  update-typedocs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@v2
+
+      - name: Checkout near-sdk-js repo
+        uses: actions/checkout@v2
+        with:
+          repository: near/near-sdk-js
+
+      - name: Install Dependencies
+        run: |
+          cd packages/near-sdk-js
+          npm i -g pnpm
+          pnpm install
+
+      - name: Build Typedocs
+        run: |
+          cd packages/near-sdk-js
+          pnpm run build-t
