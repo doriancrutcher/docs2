@@ -6,10 +6,10 @@ on:
       - main
   workflow_dispatch:
     inputs:
-    source_repo:
-      description: "Source repo"
-      required: true
-      type: string
+      source_repo:
+        description: "Source repo"
+        required: true
+        type: string
 
 jobs:
   update-typedocs:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout near-sdk-js repo
         uses: actions/checkout@v2
         with:
-          repository: near/near-sdk-js
+          repository: ${{ github.event.inputs.source_repo }}
 
       - name: Install Dependencies
         run: |
@@ -33,4 +33,10 @@ jobs:
       - name: Build Typedocs
         run: |
           cd packages/near-sdk-js
-          npx typedoc src
+          npx typedoc src --out js-docs
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: js-docs
+          path: packages/near-sdk-js/js-docs
