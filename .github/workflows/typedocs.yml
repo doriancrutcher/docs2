@@ -33,4 +33,4 @@ jobs:
       - name: Build Typedocs
         run: |
           cd packages/near-sdk-js
-          pnpm run build-t
+          npx typedoc src
