@@ -19,7 +19,7 @@ jobs:
         - name: Generate Documentation
           run: |
             npm i -g pnpm
-            pnpm install --no-fronzen-lockfile
+            pnpm install --no-frozen-lockfile
          
         - name: Upload docs as Artifact
           uses: actions/upload-artifact@v3
