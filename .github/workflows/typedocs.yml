@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  typedoc-gen:
+  makedocs:
     update-typedocs:
       runs-on: ubuntu-latest
 
@@ -20,7 +20,6 @@ jobs:
         - name: Generate Documentation
           run: |
             ls -a
-            echo "changing directories"
             cd near-sdk-js/packages/near-sdk-js/lib
             ls -a
             npx typedoc index.ts
