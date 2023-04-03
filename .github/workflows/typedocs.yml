@@ -21,10 +21,11 @@ jobs:
             npm i -g pnpm
             pnpm install --no-frozen-lockfile
             cd ./packages/near-sdk-js/src
-            npx typedoc index.ts
+            npx typedoc index.ts --out ./typedocs
+            ls 
          
         - name: Upload docs as Artifact
           uses: actions/upload-artifact@v3
           with:
             name: typedocs
-            path: ./docs/
+            path: ./typedocs/
