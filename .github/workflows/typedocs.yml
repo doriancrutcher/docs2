@@ -21,7 +21,7 @@ jobs:
             ls -a
             echo "changing folder" 
             cd ./packages/near-sdk-js/src
-            ls -a
+            pnpm i 
             npx typedoc index.ts
 
         - name: Upload docs as Artifact
