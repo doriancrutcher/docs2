@@ -58,4 +58,3 @@ jobs:
         with:
           commit_message: "Add typedoc documentation"
           commit_options: "--no-verify"
-          tagging_message: "updated typedocs for near-sdk0js"
