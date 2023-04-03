@@ -20,8 +20,7 @@ jobs:
           run: |
             ls -a
             npm i -g pnpm
-            pnpm install --update-lockfile
-            pnpm install
+            pnpm install --frozen-lockfile
             echo "#### changing folder" 
             cd ./packages/near-sdk-js/src
             echo '### launching typedoc'
