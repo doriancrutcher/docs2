@@ -22,6 +22,7 @@ jobs:
       - name: Install Dependencies
         run: |
           ls
+          echo "changing directories" 
           cd near-sdk/js/packages/near-sdk-js
           npm i -g pnpm
           pnpm install
