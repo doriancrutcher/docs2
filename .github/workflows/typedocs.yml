@@ -19,7 +19,8 @@ jobs:
         - name: Generate Documentation
           run: |
             ls -a
-            npm i
+            npm i pnpm  
+            pnpm install
             echo "#### changing folder" 
             cd ./packages/near-sdk-js/src
             echo '### launching typedoc'
