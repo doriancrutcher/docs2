@@ -20,7 +20,7 @@ jobs:
           run: |
             ls -a
             echo "changing folder" 
-            cd ./packages/near-sdk-js/lib
+            cd ./packages/near-sdk-js/src
             ls -a
             npx typedoc index.ts
 
