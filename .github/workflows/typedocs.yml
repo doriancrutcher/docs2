@@ -19,12 +19,7 @@ jobs:
         - name: Generate Documentation
           run: |
             npm i -g pnpm
-            pnpm install --frozen-lockfile
-            echo "#### changing folder" 
-            cd ./packages/near-sdk-js/src
-            echo '### launching typedoc'
-            npx typedoc index.ts
-
+         
         - name: Upload docs as Artifact
           uses: actions/upload-artifact@v3
           with:
