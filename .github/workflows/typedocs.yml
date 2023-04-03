@@ -5,35 +5,28 @@ on:
     branches:
       - main
 
-  
 jobs:
-  update-typedocs:
-    runs-on: ubuntu-latest
+  typedoc-gen:
+    update-typedocs:
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout docs repo
-        uses: actions/checkout@v2
+      steps:
+        - name: Checkout docs repo
+          uses: actions/checkout@v3
+          with:
+            repository: near/near-sdk-js
+            ref: "develop"
 
-      - name: Checkout near-sdk-js repo
-        uses: actions/checkout@v2
-        with:
-          repository: ${{ github.event.inputs.source_repo }}
+        - name: Generate Documentation
+          run: |
+            ls -a
+            echo "changing directories"
+            cd near-sdk-js/packages/near-sdk-js/lib
+            ls -a
+            npx typedoc index.ts
 
-      - name: Install Dependencies
-        run: |
-          ls
-          echo "changing directories" 
-          cd near-sdk/js/packages/near-sdk-js
-          npm i -g pnpm
-          pnpm install
-
-      - name: Build Typedocs
-        run: |
-          cd packages/near-sdk-js
-          npx typedoc src --out js-docs
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: js-docs
-          path: packages/near-sdk-js/js-docs
+        - name: Upload docs as Artifact
+          uses: actions/upload-artifact@v3
+          with:
+            name: typedocs
+            path: ./docs/
