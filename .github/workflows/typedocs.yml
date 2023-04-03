@@ -20,7 +20,7 @@ jobs:
           run: |
             ls -a
             npm i pnpm  
-            pnpm install
+            npx pnpm install
             echo "#### changing folder" 
             cd ./packages/near-sdk-js/src
             echo '### launching typedoc'
