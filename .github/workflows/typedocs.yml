@@ -36,15 +36,11 @@ jobs:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
       contents: write
-    needs: typedoc
+    needs: makedocs
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          # Repository name with owner. For example, actions/checkout
-          # Default: ${{ github.repository }}
-          repository: "doriancrutcher/repo-f"
-          ref: "main"
+
 
       # get artifact to download
 
