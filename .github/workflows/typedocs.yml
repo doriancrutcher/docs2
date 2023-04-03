@@ -19,8 +19,9 @@ jobs:
         - name: Generate Documentation
           run: |
             ls -a
-            npm i pnpm  
-            npx pnpm@7.0.0 install
+            npm i -g pnpm
+            pnpm install --update-lockfile
+            pnpm install
             echo "#### changing folder" 
             cd ./packages/near-sdk-js/src
             echo '### launching typedoc'
