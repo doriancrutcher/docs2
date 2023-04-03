@@ -21,6 +21,7 @@ jobs:
             ls -a
             echo "changing folder" 
             cd ./packages/near-sdk-js/src
+            npm i -g pnpm
             pnpm i 
             npx typedoc index.ts
 
