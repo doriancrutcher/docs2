@@ -48,7 +48,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: typedocs
-          path: ./docs-input/
+          path: ./website/near-sdk-js_versioned_docs/version-near-sdk-js@0.7.0
 
       - name: Display structure of downloaded files
         run: ls -R
@@ -58,4 +58,4 @@ jobs:
         with:
           commit_message: "Add typedoc documentation"
           commit_options: "--no-verify"
-          tagging_message: "v1.0.0"
+          tagging_message: "updated typedocs for near-sdk0js"
