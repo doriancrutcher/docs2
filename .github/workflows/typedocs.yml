@@ -19,6 +19,7 @@ jobs:
         - name: Generate Documentation
           run: |
             npm i -g pnpm
+            pnpm install
          
         - name: Upload docs as Artifact
           uses: actions/upload-artifact@v3
