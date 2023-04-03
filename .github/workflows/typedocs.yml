@@ -18,7 +18,6 @@ jobs:
 
         - name: Generate Documentation
           run: |
-            ls -a
             npm i -g pnpm
             pnpm install --frozen-lockfile
             echo "#### changing folder" 
