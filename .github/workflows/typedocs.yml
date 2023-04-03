@@ -7,7 +7,6 @@ on:
 
 jobs:
   makedocs:
-    update-typedocs:
       runs-on: ubuntu-latest
 
       steps:
