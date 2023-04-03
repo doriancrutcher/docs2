@@ -19,7 +19,8 @@ jobs:
         - name: Generate Documentation
           run: |
             ls -a
-            cd near-sdk-js/packages/near-sdk-js/lib
+            echo "changing folder" 
+            cd ./packages/near-sdk-js/lib
             ls -a
             npx typedoc index.ts
 
