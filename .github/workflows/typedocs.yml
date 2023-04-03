@@ -20,6 +20,8 @@ jobs:
           run: |
             npm i -g pnpm
             pnpm install --no-frozen-lockfile
+            cd ./packages/near-sdk-js/src
+            npx typedoc index.ts
          
         - name: Upload docs as Artifact
           uses: actions/upload-artifact@v3
