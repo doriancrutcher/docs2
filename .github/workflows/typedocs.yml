@@ -19,10 +19,10 @@ jobs:
         - name: Generate Documentation
           run: |
             ls -a
-            echo "changing folder" 
+            npm i
+            echo "#### changing folder" 
             cd ./packages/near-sdk-js/src
-            npm i pnpm
-            pnpm i 
+            echo '### launching typedoc'
             npx typedoc index.ts
 
         - name: Upload docs as Artifact
