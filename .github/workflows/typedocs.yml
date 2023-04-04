@@ -1,3 +1,4 @@
+
 name: Update Typedoc Workflow
 
 on:
@@ -6,6 +7,7 @@ on:
       - main
   repository_dispatch:
     types: [sdk-js-update]
+  workflow_dispatch:
 
 jobs:
   getevent:
